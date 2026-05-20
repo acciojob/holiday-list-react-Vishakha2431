@@ -33,11 +33,20 @@ const App = () => {
     { name: 'Tirupati', country: 'India' },
     ]
     
-  return (
+   return (
     <div id="main">
-               {/* Do not remove the main div */}
+      <ol>
+        {cityList
+          .filter((item) => item.country === "India")
+          .map((item, index) => (
+            <li key={`location${index + 1}`}>
+              {item.name}
+            </li>
+          ))}
+      </ol>
     </div>
-  )
-}
+  );
+};
+
 
 export default App
